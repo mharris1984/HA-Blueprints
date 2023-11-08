@@ -38,7 +38,7 @@ trigger:
   to: "on"
 
 action:
-  - alias: "Turn on the light"
+  - alias: "Turn on the switch"
     service: switch.turn_on
     target: !input switch_target
   - alias: "Wait until there is no motion from device"
@@ -49,6 +49,6 @@ action:
       to: "off"
   - alias: "Wait the number of seconds that has been set"
     delay: !input no_motion_wait
-  - alias: "Turn off the light"
-    service: light.turn_off
-    target: !input light_target
+  - alias: "Turn off the switch"
+    service: switch.turn_off
+    target: !input switch_target
