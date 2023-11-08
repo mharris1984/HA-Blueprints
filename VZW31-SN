@@ -1,0 +1,19 @@
+blueprint:
+  name: "Inovelli 2-1 VZW31-SN (Project Phoenix) Automations and Notifications"
+  description: "Setup notifications and Automations by setting up the LED colors, paterns, and other conditions based on input."
+  domain: automation
+
+input:
+  inovelli_switch:
+    name: Inovelli Switch
+    selector: 
+      device:
+        filter:
+          - manufacturer: Inovelli
+            model: VZW31-SN
+        entity:
+          - domain: switch
+    color_rgb:
+
+
+            
