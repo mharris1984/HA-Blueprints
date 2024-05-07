@@ -10,7 +10,8 @@ Let me know if you have any questions or comments. </p>
     <a href="https://my.home-assistant.io/redirect/blueprint_import/?blueprint_url=https%3A%2F%2Fgithub.com%2Fmharris1984%2FHA-Blueprints%2Fblob%2Fmain%2Fmotion_switch.yaml" target="_blank" rel="noreferrer noopener"><img src="https://my.home-assistant.io/badges/blueprint_import.svg" alt="Open your Home Assistant instance and show the blueprint import dialog with a specific blueprint pre-filled." /></a></li>
   <li>Inovelli VZW31-SN Switch Blueprint - Set for notification and automations and set the color and pattern of the LED bar.  (WORK IN PROGRESS, NOT COMPLETED YET)<br>
     <a href="https://my.home-assistant.io/redirect/blueprint_import/?blueprint_url=https%3A%2F%2Fgithub.com%2Fmharris1984%2FHA-Blueprints%2Fblob%2Fmain%2FVZW31-SN.yaml" target="_blank" rel="noreferrer noopener"><img src="https://my.home-assistant.io/badges/blueprint_import.svg" alt="Open your Home Assistant instance and show the blueprint import dialog with a specific blueprint pre-filled." /></a></li>
-  <li>Future Blueprint here</li>
+  <li>LED Sunrise Wake-Up Blueprint - Turn on your LED lights and Dim up/color to match the sunrise to wake you up gentley. (WORK IN PROGRESS, NOT COMPLETED YET)<br>
+<a href="https://my.home-assistant.io/redirect/blueprint_import/?blueprint_url=https%3A%2F%2Fgithub.com%2Fmharris1984%2FHA-Blueprints%2Fblob%2Fmain%2FSunrise_LED_WakeUp.yaml" target="_blank" rel="noreferrer noopener"><img src="https://my.home-assistant.io/badges/blueprint_import.svg" alt="Open your Home Assistant instance and show the blueprint import dialog with a specific blueprint pre-filled." /></a></li>
   <li>Future Blueprint here</li>
   <li>Future Blueprint here</li>
   <li>Future Blueprint here</li>
