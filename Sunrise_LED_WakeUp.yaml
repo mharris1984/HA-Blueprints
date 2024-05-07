@@ -17,3 +17,12 @@ blueprint:
     To Update the Blueprint, on the main BluePrint screen in HA, click the three dot menu all the way on the right and select "Re-Import Blueprint."
   domain: automation
   source_url: https://github.com/mharris1984/HA-Blueprints/blob/main/Sunrise_LED_WakeUp.yaml
+  input:
+    target_light:
+      name: Lights
+      description: LED lights you would like to include in the Sunrise Wake-up Scene. 
+      selector:
+        target:
+          entity:
+            filter:
+              - domain: light
