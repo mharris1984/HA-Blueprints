@@ -1,1 +1,19 @@
+#****NOTE: THIS IS A BLUEPRINT THAT IS UNDER CONSTRUCTION!!! PLEASE DO NOT IMPORT YET AND USE!!!//****#
 
+blueprint:
+  name: Sunrise LED Wake-Up
+  description: >
+    # Sunrise LED Wake-Up
+
+    **Version:** 2024.5.7.100
+
+
+    **Description:** Adjusts an LED's Dim/Color to match the sun rising to wake you up nicely.
+
+
+    **Location of Blueprint:**
+    Check for updates to the BluePrint here: [Github Blueprint Location](https://github.com/mharris1984/HA-Blueprints/blob/main/Sunrise_LED_WakeUp.yaml). 
+
+    To Update the Blueprint, on the main BluePrint screen in HA, click the three dot menu all the way on the right and select "Re-Import Blueprint."
+  domain: automation
+  source_url: https://github.com/mharris1984/HA-Blueprints/blob/main/Sunrise_LED_WakeUp.yaml
