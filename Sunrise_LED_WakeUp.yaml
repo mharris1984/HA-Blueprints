@@ -8,7 +8,9 @@ blueprint:
     **Version:** 2024.5.7.100
 
 
-    **Description:** Adjusts an LED's Dim/Color to match the sun rising to wake you up nicely.
+    **Description:** Adjusts an LED's Dim/Color to match the sun rising to wake you up nicely.  LED's rise up over a 30 minute period.  
+  
+    **COMING SOON:** SUNSET LIGHTS DIMMING OFF. 
 
 
     **Location of Blueprint:**
@@ -17,7 +19,10 @@ blueprint:
     To Update the Blueprint, on the main BluePrint screen in HA, click the three dot menu all the way on the right and select "Re-Import Blueprint."
   domain: automation
   source_url: https://github.com/mharris1984/HA-Blueprints/blob/main/Sunrise_LED_WakeUp.yaml
+
+##INPUT SECTION##
   input:
+  ##LIGHT SELECTOR INPUT##
     target_light:
       name: Lights
       description: LED lights you would like to include in the Sunrise Wake-up Scene. 
@@ -26,3 +31,80 @@ blueprint:
           entity:
             filter:
               - domain: light
+    light_transition:
+      name: Light Transition
+      description: Time (in milliseconds) that the light will transition between each color/dim
+      default: 250
+      selector:
+        number:
+          min: 0
+          max: 60000
+          step: 1
+          unit_of_measurement: milliseconds
+          mode: box
+    rgb_color:
+      name: Lightbulb_Color
+      description: The start sunrise.  Default is a deep orange red color at 12% to start off less abrupt to your eyes. 
+      selector:
+        color_rgb:
+      default: [31, 5 ,0]
+  ##SUNRISE OR SUNSET INPUT##
+    trigger_selector:
+      name: Sunrise / Sunset
+      default: Sunrise
+      selector:
+        select:
+          mode: dropdown 
+          options:
+            - label: "Sunset"
+              value: "sunset"
+            - label: "Sunrise"
+              value: "sunrise"
+  ##SUNRISE OR SUNSET OFFSET TIME INPUT##
+    offset_time:
+      name: Offset Time
+      description: This sets the offset to the Sunrise / Sunset time
+      default: "-00:00:00"
+      selector:
+        time:
+    off_time:
+      name: Off Time
+      description: This sets the time at which the lights shall be turned off
+      default: "23:00:00"
+      selector:
+        time:
+
+
+##VARIABLES SECTION##        
+  variables:
+    light_transition: !input light_transition
+
+
+  
+##TRIGGER SECTION##
+  trigger:
+    - platform: sun
+      event: !input trigger_selector
+      offset: !input offset_time
+      id: "1"
+    - platform: time
+      at: !input off_time
+      id: "2"
+  condition: []
+  action:
+    - choose:
+        - conditions:
+            - condition: trigger
+              id: "1"
+          sequence:
+            - service: light.turn_on
+              data: {}
+              target: !input target_light
+        - conditions:
+           - condition: trigger
+             id: "2"
+          sequence:
+            - service: light.turn_off
+              data: {}
+              target: !input target_light
+  mode: single
